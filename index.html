@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMRNNs | Interpretable Dense Retrieval via Embedding Modulation</title>
+    <meta name="description" content="Official project website for IMRNNs: interpretable dense retrieval adapters via bidirectional embedding modulation." />
+    <link rel="canonical" href="https://yashsaxena21.github.io/IMRNNs-web/" />
+    <meta name="theme-color" content="#060d18" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IMRNNs | Interpretable Dense Retrieval via Embedding Modulation" />
+    <meta property="og:description" content="Official project website for IMRNNs, a dense retrieval adapter that modulates embeddings while keeping the base retriever frozen." />
+    <meta property="og:url" content="https://yashsaxena21.github.io/IMRNNs-web/" />
+    <meta property="og:image" content="https://yashsaxena21.github.io/IMRNNs-web/assets/og-card.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IMRNNs | Interpretable Dense Retrieval via Embedding Modulation" />
+    <meta name="twitter:description" content="Official project website for IMRNNs, with paper, code, checkpoints, and an interactive method visualization." />
+    <meta name="twitter:image" content="https://yashsaxena21.github.io/IMRNNs-web/assets/og-card.svg" />
+    <link rel="icon" type="image/png" href="./assets/imrnns-given-icon-tight.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <!-- ── Ambient blobs ── -->
+      <div class="ambient ambient-a"></div>
+      <div class="ambient ambient-b"></div>
+      <div class="ambient ambient-c"></div>
+
+      <!-- ── Nav ── -->
+      <header class="topbar">
+        <a class="brand" href="#hero" aria-label="IMRNNs home">
+          <img class="brand-wordmark" src="./assets/imrnns-given-wordmark-header.png" alt="IMRNNs" />
+        </a>
+        <nav class="topnav" aria-label="Primary">
+          <a href="#method">Method</a>
+          <a href="#paper">Paper</a>
+          <a href="#use">Use</a>
+          <a href="#ecosystem">Links</a>
+        </nav>
+      </header>
+
+      <main>
+
+        <!-- ── Hero ── -->
+        <section class="hero reveal" id="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Official Project Website · EACL 2026</p>
+            <h1>Interpretable retrieval via embedding modulation.</h1>
+            <p class="lede">
+              <span class="lede-strong">Interpretable Modular Retrieval Neural Networks (IMRNNs)</span> augments frozen dense retrievers with two lightweight adapters: one uses the query to modulate document embeddings, the other uses retrieved documents to refine the query. The base retriever stays frozen. The semantic shift is visible, attributable, and inspectable.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://github.com/YashSaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">
+                <img class="button-mark button-mark-dark" src="./assets/github-mark.svg" alt="" aria-hidden="true" />
+                GitHub
+              </a>
+              <a class="button button-secondary" href="https://huggingface.co/yashsaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">
+                <img class="button-mark" src="./assets/hf-logo.svg" alt="" aria-hidden="true" />
+                Hugging Face
+              </a>
+              <a class="button button-ghost" href="https://arxiv.org/abs/2601.20084" target="_blank" rel="noopener noreferrer">
+                Read the Paper →
+              </a>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat-pill">
+                <span class="stat-val">+6.35%</span>
+                <span class="stat-lbl">nDCG</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-pill">
+                <span class="stat-val">+7.14%</span>
+                <span class="stat-lbl">Recall</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-pill">
+                <span class="stat-val">+7.04%</span>
+                <span class="stat-lbl">MRR</span>
+              </div>
+              <a class="stat-source" href="https://arxiv.org/abs/2601.20084" target="_blank" rel="noopener noreferrer">
+                Reported paper averages across seven BEIR benchmarks
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal">
+            <div class="hero-note glass">
+              <div class="hero-note-head">
+                <img class="hero-logo-lg" src="./assets/imrnns-given-icon-tight.png" alt="" aria-hidden="true" />
+                <div>
+                  <p class="eyebrow">Project Summary</p>
+                  <strong>Frozen retriever. Bidirectional adapters. Causal attribution.</strong>
+                </div>
+              </div>
+              <ul class="feature-list">
+                <li>Operates on frozen dense retriever embeddings with no re-encoding</li>
+                <li>Two adapters: query→doc modulation + doc→query refinement</li>
+                <li>Back-projects modulation vectors to interpretable token concepts</li>
+                <li>Ships with package, training CLI, and released adapter checkpoints</li>
+              </ul>
+              <div class="note-badges">
+                <span class="badge badge-amber">Information Retrieval</span>
+                <span class="badge badge-teal">Interpretability</span>
+                <span class="badge badge-blue">Plug &amp; Play</span>
+              </div>
+            </div>
+
+            <div class="hero-authors">
+              <a class="author-card author-card-compact glass" href="https://yashsaxena21.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/yash-portrait.png" alt="Yash Saxena portrait" loading="lazy" />
+                <div class="author-info">
+                  <strong>Yash Saxena</strong>
+                  <span>PhD Student, Computer Science, University of Maryland, Baltimore County</span>
+                </div>
+              </a>
+              <a class="author-card author-card-compact glass" href="https://ebiquity.umbc.edu/person/html/Ankur/Padia" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/ankur-padia.png" alt="Ankur Padia portrait" loading="lazy" />
+                <div class="author-info">
+                  <strong>Ankur Padia</strong>
+                  <span>Director, Liberty Mutual Insurance</span>
+                </div>
+              </a>
+              <a class="author-card author-card-compact glass" href="https://kalpagunaratna.github.io/" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/kalpa-gunaratna.jpg" alt="Kalpa Gunaratna portrait" loading="lazy" />
+                <div class="author-info">
+                  <strong>Kalpa Gunaratna</strong>
+                  <span>Staff Research Scientist, Samsung Research America</span>
+                </div>
+              </a>
+              <a class="author-card author-card-compact glass" href="https://manasgaur.github.io/" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/manas-gaur.jpg" alt="Manas Gaur portrait" loading="lazy" />
+                <div class="author-info">
+                  <strong>Manas Gaur</strong>
+                  <span>Assistant Professor, Computer Science and Electrical Engineering, University of Maryland, Baltimore County</span>
+                </div>
+              </a>
+            </div>
+          </aside>
+        </section>
+
+        <!-- ── Affiliations ── -->
+        <section class="band band-logos reveal" aria-label="Affiliations">
+          <p class="eyebrow" style="margin-bottom:1.1rem">Affiliations &amp; Release Surfaces</p>
+          <div class="logo-rail">
+            <a class="logo-chip" href="https://styleguide.umbc.edu/logos/" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/umbc-shield.png" alt="UMBC" />
+              <span>UMBC</span>
+            </a>
+            <a class="logo-chip" href="https://kai2.umbc.edu/" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/kai2-logo.jpg" alt="KAI2 Lab" />
+              <span>KAI2 Lab</span>
+            </a>
+            <a class="logo-chip" href="https://huggingface.co/yashsaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/hf-logo.svg" alt="Hugging Face" />
+              <span>Hugging Face</span>
+            </a>
+            <a class="logo-chip" href="https://github.com/YashSaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/github-mark.svg" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a class="logo-chip" href="https://2026.eacl.org/program/findings-accepted/" target="_blank" rel="noopener noreferrer">
+              <img class="logo-chip-wide" src="./assets/eacl2026-logo.png" alt="EACL 2026" />
+              <span>EACL 2026</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- ── Method ── -->
+        <section class="band band-method reveal" id="method">
+          <div class="section-head">
+            <p class="eyebrow">Method</p>
+            <h2>How IMRNNs modulates embeddings</h2>
+            <p>Starting from a frozen dense retriever, IMRNNs projects embeddings into a compact working space and applies two learned MLP adapters bidirectionally, exposing interpretable semantic shifts between queries and documents.</p>
+          </div>
+
+          <div class="method-grid">
+
+            <!-- Canvas animation -->
+            <div class="animation-shell glass">
+            <div class="animation-header">
+              <div>
+                <p class="eyebrow">Live Visualization</p>
+                <h3>Embedding Space Modulation</h3>
+              </div>
+              <div class="animation-controls">
+                <span class="stage-pill" id="stage-pill">Step 1 / 4</span>
+                <button class="motion-toggle" id="viz-toggle" type="button" aria-pressed="false">Pause Motion</button>
+              </div>
+            </div>
+            <div class="animation-meta">
+              <div class="query-card">
+                <span class="query-kicker">Query</span>
+                <p>What is the currency of Mexico?</p>
+              </div>
+              <div class="animation-legend" aria-label="Visualization legend">
+                <span class="legend-chip legend-query">Q Query</span>
+                <span class="legend-chip legend-pos">D+ Relevant</span>
+                <span class="legend-chip legend-mid">D Support</span>
+                <span class="legend-chip legend-neg">D- Irrelevant</span>
+              </div>
+            </div>
+            <div class="canvas-wrap" aria-label="Animated embedding space visualization">
+              <canvas id="embedding-canvas"></canvas>
+            </div>
+              <div class="stage-copy">
+                <span class="stage-copy-kicker">Current Step</span>
+                <h4 id="stage-title">Projection into the working space</h4>
+                <p id="stage-description">IMRNNs starts from the frozen retriever's static embedding space and projects query and document embeddings into a compact working space for modulation.</p>
+              </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="method-cards">
+              <article class="glass narrative-card">
+                <div class="card-icon card-icon-q">A<sub>q</sub></div>
+                <h3>Query-conditioned document modulation</h3>
+                <p>The query adapter predicts an affine transform from the projected query and applies it to each candidate document, pulling relevant ones closer and pushing irrelevant ones away.</p>
+              </article>
+              <article class="glass narrative-card">
+                <div class="card-icon card-icon-d">A<sub>d</sub></div>
+                <h3>Document-conditioned query refinement</h3>
+                <p>The document adapter produces document-side transforms whose aggregate shifts the query toward the relevant semantic neighborhood before final cosine scoring.</p>
+              </article>
+              <article class="glass narrative-card">
+                <div class="card-icon card-icon-i">∇</div>
+                <h3>Token-level attribution via back-projection</h3>
+                <p>Modulation vectors are back-projected via Moore-Penrose pseudoinverse to expose the token concepts, such as <em>Peso</em> and <em>Mexico</em>, that causally drove each ranking change.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Paper ── -->
+        <section class="band band-paper reveal" id="paper">
+          <div class="section-head">
+            <p class="eyebrow">Paper</p>
+            <h2>What the paper establishes</h2>
+            <p>The paper presents IMRNNs as a retrieval adapter that works directly in embedding space. The base retriever remains frozen, the adapters are lightweight, and the ranking changes can be traced back to concrete token concepts.</p>
+          </div>
+
+          <div class="paper-grid">
+            <article class="glass narrative-card">
+              <h3>Core idea</h3>
+              <p>IMRNNs adds two MLP adapters on top of a frozen dense retriever. One modulates document embeddings using the query, and the other refines the query using the candidate documents.</p>
+            </article>
+            <article class="glass narrative-card">
+              <h3>Training setup</h3>
+              <p>The adapters are trained with margin-based ranking loss and hard negatives while the underlying encoder is kept fixed. This preserves the original retriever and limits training cost.</p>
+            </article>
+            <article class="glass narrative-card">
+              <h3>Serving path</h3>
+              <p>Document embeddings are cached offline. At runtime, IMRNNs applies lightweight modulation and cosine scoring on top of those cached representations, which keeps the system practical for real retrieval pipelines.</p>
+            </article>
+            <article class="glass narrative-card">
+              <h3>Interpretability</h3>
+              <p>The explanation is part of the model itself, not a separate post-hoc layer. The same modulation vectors that change rankings can be back-projected to reveal the concepts that mattered most.</p>
+            </article>
+          </div>
+
+          <div class="paper-actions">
+            <a class="button button-primary" href="https://arxiv.org/abs/2601.20084" target="_blank" rel="noopener noreferrer">Read the Paper</a>
+          </div>
+
+          <div class="citation-shell glass">
+            <div class="citation-head">
+              <div>
+                <p class="eyebrow">Citation</p>
+                <h3>Cite the paper</h3>
+              </div>
+              <button class="citation-copy" type="button" data-copy-target="citation-bibtex">Copy BibTeX</button>
+            </div>
+            <pre class="citation-pre"><code id="citation-bibtex">@misc{saxena2026imrnns,
+  title={IMRNNs: An Efficient Method for Interpretable Dense Retrieval via Embedding Modulation},
+  author={Yash Saxena and Ankur Padia and Kalpa Gunaratna and Manas Gaur},
+  year={2026},
+  eprint={2601.20084},
+  archivePrefix={arXiv},
+  note={Accepted to EACL 2026}
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- ── Use ── -->
+        <section class="band band-use reveal" id="use">
+          <div class="section-head">
+            <p class="eyebrow">Use IMRNNs</p>
+            <h2>Start from released adapters or train your own</h2>
+            <p>Use Hugging Face for published checkpoints. Use the GitHub package to cache embeddings, train on new datasets, or attach adapters to a different dense retriever.</p>
+          </div>
+
+          <div class="tab-shell glass">
+            <div class="tab-nav" role="tablist" aria-label="Usage examples">
+              <button class="tab active" id="tab-quick-start" type="button" role="tab" aria-selected="true" aria-controls="quick-start" data-tab="quick-start">Quick Start</button>
+              <button class="tab" id="tab-train" type="button" role="tab" aria-selected="false" aria-controls="train" tabindex="-1" data-tab="train">Training Pipeline</button>
+              <button class="tab" id="tab-custom" type="button" role="tab" aria-selected="false" aria-controls="custom" tabindex="-1" data-tab="custom">Custom Retriever</button>
+            </div>
+
+            <div class="tab-panel active" id="quick-start" role="tabpanel" aria-labelledby="tab-quick-start" tabindex="0">
+              <pre><code>from imrnns import IMRNNAdapter
+
+# Load base retriever + IMRNN adapter checkpoint from Hugging Face
+adapter = IMRNNAdapter.from_pretrained(
+    encoder="minilm",
+    dataset="webis-touche2020",
+    repo_id="yashsaxena21/IMRNNs",
+    device="cpu",
+)
+
+scores = adapter.score(
+    query="Should social media platforms ban political advertising?",
+    documents=[
+        "Restricting political ads can reduce targeted misinformation.",
+        "A recipe for roasted cauliflower with tahini sauce.",
+        "Ad transparency archives improve auditing of campaign messaging.",
+    ],
+    top_k=3,
+)
+
+print(scores)</code></pre>
+            </div>
+
+            <div class="tab-panel" id="train" role="tabpanel" aria-labelledby="tab-train" tabindex="0" hidden>
+              <pre><code># Full training and evaluation flow
+python -m imrnns cache \
+  --encoder minilm \
+  --dataset webis-touche2020 \
+  --datasets-dir /path/to/datasets \
+  --output-dir /path/to/cache_mini_webis-touche2020
+
+python -m imrnns train \
+  --encoder minilm \
+  --dataset webis-touche2020 \
+  --cache-dir /path/to/cache_mini_webis-touche2020 \
+  --datasets-dir /path/to/datasets \
+  --output-dir /path/to/artifacts
+
+python -m imrnns evaluate \
+  --encoder minilm \
+  --dataset webis-touche2020 \
+  --cache-dir /path/to/cache_mini_webis-touche2020 \
+  --datasets-dir /path/to/datasets \
+  --checkpoint /path/to/artifacts/imrnns-minilm-webis-touche2020.pt \
+  --k 10</code></pre>
+            </div>
+
+            <div class="tab-panel" id="custom" role="tabpanel" aria-labelledby="tab-custom" tabindex="0" hidden>
+              <pre><code># Attach IMRNNs to any custom dense retriever
+python -m imrnns run \
+  --encoder-model-name my-org/my-retriever \
+  --embedding-dim 768 \
+  --query-prefix "query: " \
+  --passage-prefix "passage: " \
+  --dataset my-dataset \
+  --datasets-dir /path/to/datasets \
+  --cache-dir /path/to/cache_my_retriever \
+  --output-dir /path/to/artifacts \
+  --k 10</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Ecosystem ── -->
+        <section class="band band-ecosystem reveal" id="ecosystem">
+          <div class="section-head">
+            <p class="eyebrow">Ecosystem</p>
+            <h2>Paper, package, checkpoints</h2>
+          </div>
+          <div class="link-grid">
+            <a class="link-card glass" href="https://github.com/YashSaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">
+              <div class="link-card-head">
+                <img class="link-card-logo" src="./assets/github-mark.svg" alt="" aria-hidden="true" />
+                <span class="link-card-tag">Code</span>
+              </div>
+              <h3>GitHub Repository</h3>
+              <p>Source code, CLI, baseline comparisons, and end-to-end workflow for caching, training, and evaluation.</p>
+              <span class="link-arrow">→</span>
+            </a>
+            <a class="link-card glass" href="https://huggingface.co/yashsaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">
+              <div class="link-card-head">
+                <img class="link-card-logo" src="./assets/hf-logo.svg" alt="" aria-hidden="true" />
+                <span class="link-card-tag">Checkpoints</span>
+              </div>
+              <h3>Hugging Face Release</h3>
+              <p>Released adapter checkpoints, public model card, and examples for rapid adoption across retrieval tasks.</p>
+              <span class="link-arrow">→</span>
+            </a>
+            <a class="link-card glass" href="https://arxiv.org/abs/2601.20084" target="_blank" rel="noopener noreferrer">
+              <div class="link-card-head">
+                <img class="link-card-logo link-card-logo-wide" src="./assets/eacl2026-logo.png" alt="" aria-hidden="true" />
+                <span class="link-card-tag">EACL 2026</span>
+              </div>
+              <h3>Research Paper</h3>
+              <p>Complete method, training setup, interpretability formulation, and BEIR benchmark results.</p>
+              <span class="link-arrow">→</span>
+            </a>
+            <a class="link-card glass" href="https://kai2.umbc.edu/" target="_blank" rel="noopener noreferrer">
+              <div class="link-card-head">
+                <img class="link-card-logo" src="./assets/kai2-logo.jpg" alt="" aria-hidden="true" />
+                <span class="link-card-tag">Lab</span>
+              </div>
+              <h3>KAI2 Lab · UMBC</h3>
+              <p>Research lab context and broader work on AI systems, knowledge-aware intelligence, and interpretability.</p>
+              <span class="link-arrow">→</span>
+            </a>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ── Footer ── -->
+      <footer class="footer">
+        <div class="footer-brand">
+          <img class="footer-logo" src="./assets/imrnns-given-icon-tight.png" alt="" aria-hidden="true" />
+          <div>
+            <strong>IMRNNs</strong>
+            <span>Interpretable dense retrieval adapters · arXiv 2601.20084</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/YashSaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://huggingface.co/yashsaxena21/IMRNNs" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+          <a href="https://arxiv.org/abs/2601.20084" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://yashsaxena21.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+        </div>
+      </footer>
+
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

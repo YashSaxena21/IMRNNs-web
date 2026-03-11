@@ -1,0 +1,55 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#06101C"/>
+  <rect width="1200" height="630" fill="url(#bg)" opacity="0.16"/>
+  <circle cx="166" cy="112" r="220" fill="#F0B42A" opacity="0.14"/>
+  <circle cx="1015" cy="136" r="210" fill="#1DD3C0" opacity="0.12"/>
+  <circle cx="634" cy="602" r="250" fill="#E05060" opacity="0.08"/>
+
+  <rect x="86" y="78" width="1028" height="474" rx="32" fill="#0A1628" fill-opacity="0.9" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <g transform="translate(130 144)">
+    <rect width="92" height="92" rx="24" fill="#08111D"/>
+    <rect width="92" height="92" rx="24" fill="url(#brand)" opacity="0.14"/>
+    <circle cx="24" cy="46" r="11" fill="#F0B42A"/>
+    <circle cx="24" cy="46" r="16" fill="#F0B42A" opacity="0.14"/>
+    <circle cx="68" cy="28" r="8" fill="#1DD3C0"/>
+    <circle cx="68" cy="28" r="12" fill="#1DD3C0" opacity="0.12"/>
+    <circle cx="71" cy="66" r="6" fill="#E05060" opacity="0.58"/>
+    <path d="M37 40C48 27 55 25 61 25.5" stroke="#F0B42A" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="62.5" cy="25.4" r="2.3" fill="#F0B42A"/>
+    <path d="M61 33C53 41 44 44 37.5 45.5" stroke="#1DD3C0" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="36.8" cy="45.7" r="2.1" fill="#1DD3C0" opacity="0.9"/>
+  </g>
+
+  <text x="252" y="185" fill="#F0B42A" font-family="Syne, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0.18em">OFFICIAL PROJECT WEBSITE</text>
+  <text x="252" y="270" fill="#E4F1FF" font-family="Syne, Arial, sans-serif" font-size="68" font-weight="800">IMRNNs</text>
+  <text x="252" y="338" fill="#E4F1FF" font-family="DM Sans, Arial, sans-serif" font-size="34" font-weight="600">Interpretable dense retrieval via embedding modulation</text>
+  <text x="252" y="404" fill="#89A2BD" font-family="DM Sans, Arial, sans-serif" font-size="24">
+    <tspan x="252" dy="0">Frozen retriever, lightweight adapters, and token-level attribution</tspan>
+    <tspan x="252" dy="34">for retrieval systems built in embedding space.</tspan>
+  </text>
+
+  <g transform="translate(252 458)">
+    <rect width="208" height="58" rx="29" fill="#F0B42A"/>
+    <text x="104" y="36" text-anchor="middle" fill="#07101C" font-family="Syne, Arial, sans-serif" font-size="21" font-weight="800">GitHub</text>
+  </g>
+  <g transform="translate(478 458)">
+    <rect width="252" height="58" rx="29" fill="#1DD3C0"/>
+    <text x="126" y="36" text-anchor="middle" fill="#07101C" font-family="Syne, Arial, sans-serif" font-size="21" font-weight="800">Hugging Face</text>
+  </g>
+  <g transform="translate(752 458)">
+    <rect width="206" height="58" rx="29" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <text x="103" y="36" text-anchor="middle" fill="#E4F1FF" font-family="Syne, Arial, sans-serif" font-size="21" font-weight="800">arXiv</text>
+  </g>
+
+  <defs>
+    <linearGradient id="bg" x1="76" y1="34" x2="1118" y2="586" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0B42A"/>
+      <stop offset="1" stop-color="#1DD3C0"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="92" y2="92" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0B42A"/>
+      <stop offset="1" stop-color="#1DD3C0"/>
+    </linearGradient>
+  </defs>
+</svg>
